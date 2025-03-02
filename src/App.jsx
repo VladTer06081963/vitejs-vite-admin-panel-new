@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Layout from "./Layout";
-import Home from "./Home";
-import About from "./About";
-import AdminLayout from "./AdminLayout";
-import AdminPage from "./AdminPage";
-import LoginPage from "./LoginPage"; // Добавляем страницу входа
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import AdminLayout from "./admin/AdminLayout";
+import AdminPage from "./admin/AdminPage";
+import LoginPage from "./admin/LoginPage"; // Добавляем страницу входа
 
 function App() {
   return (
@@ -19,8 +19,7 @@ function App() {
             </Layout>
           }
         />
-        <Route
-          path="/about"
+        <Route path="/about"
           element={
             <Layout>
               <About />
@@ -28,9 +27,7 @@ function App() {
           }
         />
         <Route path="/login" element={<LoginPage />} />
-        <Route
-          path="/admin"
-          element={
+        <Route path="/admin" element={
             <AdminLayout>
               <AdminPage />
             </AdminLayout>
@@ -40,5 +37,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

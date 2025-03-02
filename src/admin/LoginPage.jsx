@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 const LoginPage = () => {
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (password === '123') {
-      // Пароль можно заменить на API-запрос
-      localStorage.setItem('isAdmin', 'true'); // Сохраняем в localStorage
-      navigate('/admin'); // Переход в админку
+    if (password === "123") {
+      localStorage.setItem("isAdmin", "true");
+      navigate("/admin");
     } else {
-      alert('Неверный пароль!');
+      alert("Неверный пароль!");
     }
   };
 
   return (
-    <div>
+    <div> 
       <h2>Вход в админку</h2>
       <input
         type="password"
